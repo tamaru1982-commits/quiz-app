@@ -1,0 +1,201 @@
+:root {
+  --bg-deep: #0a0810;
+  --panel: #171225;
+  --panel-edge: #2a2140;
+  --purple: #6a4fb0;
+  --orange: #ff6a13;
+  --green: #3fff9e;
+  --red: #ff3b3b;
+  --text-main: #e9e4f7;
+  --text-dim: #8b83a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(106, 79, 176, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(255, 106, 19, 0.12), transparent 50%),
+    var(--bg-deep);
+  font-family: "Rajdhani", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  color: var(--text-main);
+  padding: 16px;
+}
+
+.quiz-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(180deg, var(--panel) 0%, #100c1c 100%);
+  border: 1px solid var(--panel-edge);
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 106, 19, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(106, 79, 176, 0.15);
+  padding: 34px 28px 28px;
+  overflow: hidden;
+}
+
+.hazard-bar {
+  height: 8px;
+  margin: -34px -28px 24px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--orange),
+    var(--orange) 10px,
+    #1a1526 10px,
+    #1a1526 20px
+  );
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.system-label {
+  margin: 0 0 6px;
+  font-family: "Orbitron", "Rajdhani", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-shadow: 0 0 8px rgba(63, 255, 158, 0.6);
+}
+
+.quiz-header h1 {
+  font-family: "Orbitron", "Rajdhani", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 0 0 10px;
+  color: var(--orange);
+  text-shadow: 0 0 14px rgba(255, 106, 19, 0.55);
+}
+
+.progress {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: var(--text-main);
+  border-left: 3px solid var(--purple);
+  padding-left: 12px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.option-btn {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--panel-edge);
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  background: #1c1730;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--green);
+  background: #22203a;
+  box-shadow: 0 0 12px rgba(63, 255, 158, 0.25);
+}
+
+.option-btn:disabled {
+  cursor: default;
+}
+
+.option-btn.correct {
+  background: rgba(63, 255, 158, 0.12);
+  border-color: var(--green);
+  color: var(--green);
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(63, 255, 158, 0.4);
+}
+
+.option-btn.incorrect {
+  background: rgba(255, 59, 59, 0.12);
+  border-color: var(--red);
+  color: #ff8080;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(255, 59, 59, 0.4);
+}
+
+.feedback {
+  min-height: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.feedback.correct {
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(63, 255, 158, 0.5);
+}
+
+.feedback.incorrect {
+  color: #ff8080;
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Orbitron", "Rajdhani", sans-serif;
+  color: #120c1e;
+  background: linear-gradient(135deg, var(--orange), #ffae3f);
+  border: none;
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.1s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 18px rgba(255, 106, 19, 0.6);
+  transform: translateY(-1px);
+}
+
+.result-text {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.7;
+  color: var(--text-main);
+}

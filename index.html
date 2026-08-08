@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一般常識クイズ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="quiz-card">
+    <div class="hazard-bar"></div>
+    <header class="quiz-header">
+      <p class="system-label">SYSTEM // GENERAL KNOWLEDGE TEST</p>
+      <h1>一般常識クイズ</h1>
+      <p id="progress" class="progress"></p>
+    </header>
+
+    <section id="question-screen">
+      <p id="question-text" class="question-text"></p>
+      <div id="options" class="options"></div>
+      <p id="feedback" class="feedback"></p>
+      <button id="next-btn" class="btn" hidden>次へ</button>
+    </section>
+
+    <section id="result-screen" hidden>
+      <p id="result-text" class="result-text"></p>
+      <button id="restart-btn" class="btn">もう一度挑戦する</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
