@@ -40,3 +40,6 @@ quiz-app/
 - 外部ライブラリやフレームワークには依存せず、素のHTML/CSS/JavaScriptで実装する。
 - 問題データ（設問・選択肢・正解）は配列やJSONなど、追加・編集しやすい形で管理する。
 - コードは日本語コメントを最小限にし、変数名・関数名から意図が読み取れるようにする。
+
+## GitHubリポジトリ
+https://github.com/tamaru1982-commits/quiz-app
